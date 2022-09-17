@@ -14,14 +14,14 @@ const TodoList = () => {
 
     const handleDeleteEvent = async (id) => {
         setWarning("Wait Until This Procces Done!")
-        await axios.delete(`https://631a122bdc236c0b1ed5e725.mockapi.io/users/${id}`)
+        await axios.delete(`${process.env.REACT_APP_API_KEY}/users/${id}`)
         const newData = data.filter((data) => data.id !== id)
         setData(newData);
         setWarning("")
     }
     const handleClickEvent = async (addTodos) => {
         setWarning("Wait Until This Procces Done!")
-        await axios.post("https://631a122bdc236c0b1ed5e725.mockapi.io/users", {
+        await axios.post(`${process.env.REACT_APP_API_KEY}/users/`, {
             todo: addTodos
         })
         if(data.length===0){
@@ -66,7 +66,7 @@ const TodoList = () => {
             setUsername(savedUsername);
         async function fetchData() {
             setLoading(true);
-            const response = await axios.get("https://631a122bdc236c0b1ed5e725.mockapi.io/users");
+            const response = await axios.get(`${process.env.REACT_APP_API_KEY}/users`);
             setData(response.data);
             setLoading(false);
 
@@ -87,7 +87,7 @@ const TodoList = () => {
                     <h1>TODO List</h1>
                     <div>
                         <p>{username}</p>
-                        <Link to="/"><button>Logout</button></Link>
+                        <Link to="/todoApp"><button>Logout</button></Link>
                     </div>
 
                 </div>
