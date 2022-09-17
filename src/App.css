@@ -1,38 +1,285 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.dark{
+    background-color: black;
+}
+.login{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+.login-body{
+    width: 800px;
+    height: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50px;
+    background-color:#62c3ec;
+    box-shadow: 1px 1px 15px 10px #999;
+}
+.head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.head h1{
+    color:white;
+    font-size: 26px;
+}
+.log-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 400px;
+    height: 100px;
+    border-radius: 20px;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.username{
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: white;
+    padding: 20px;
+    outline: none;
+ 
+}
+.login-btn{
+    outline: none;
+    height: 50px;
+    width: 80px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.login-btn:hover{
+    background-color:black;
+    color: white;
+    transition: 0.3s;
+}
+.todo-body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading h1{
+    font-size: 40px;
+}
+.todo::-webkit-scrollbar {
+    display: none;
+}
+.todo{
+    position: relative;
+    width: 500px;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 1px 1px 5px #999;
+    border-radius: 20px;
+    overflow: auto;
+}
+.info-bar{
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    background-color: #62c3ec;
+    
+}
+.info-bar h1{
+    position: absolute;
+    left: 25px;
+    font-size: 26px;
+}
+.info-bar>div{
+    position: absolute;
+    display: flex;
+    gap: 20px;
+    right: 10px;
+}
+.info-bar p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px ;
+    height: 60px;
+    background-color: white;
+    border-radius: 20px;
+    
+}
+.info-bar button{
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.info-bar button:hover{
+    transition: 0.3s;
+    background-color: red;
+}
+.add-todos{
+    width: 90%;
+}
+#add-todo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}#add-todo>div>p{
+    color: red;
+}
+.add-todo{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px 1px 5px #999;
+    gap: 20px;
+    
+}
+.input-todo{
+    width: 300px;
+    height: 50px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 5px #999;
+
+    border-radius: 5px;
+
+
+}
+.add-btn{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #62c3ec;
+    color: white;
+    border: none;
+    box-shadow: 1px 1px 5px #999;
+
+}
+.list-todo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 650px;
+    gap: 10px;
+    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.solo-todos{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 60px;
+    box-shadow: 1px 1px 5px #999;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 20px;
+    transition:0.5s;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.solo-todo{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-
-.App-link {
-  color: #61dafb;
+.solo-todo>div{
+    display: flex;
+    gap: 10px;
 }
+.solo-todo #edit{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    border: none;
+    background-color: rgb(85, 85, 204);
+    color: white;
+    box-shadow: 1px 1px 5px #999;
+}
+.solo-todo #delete{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+ 
+    border: none;
+    background-color: red;
+    color: white;
+    box-shadow: 1px 1px 5px #999;
+}
+.solo-todos .hidden-edit{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+.solo-todos>div>input{
+    padding: 20px;
+    width: 200px;
+    height: 50px;
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 5px #999;
+}
+.solo-todos .hidden-edit button{
+    width: 60px;
+    height: 40px;
+    border: none;
+    background-color: rgb(85, 85, 204);
+    color: white;
+    box-shadow: 1px 1px 5px #999;
+    cursor: pointer;
+}
+.edit{
+    transition:0.5s;
+    height: 130px;
+    
 }
