@@ -11,6 +11,11 @@ body{
 .freeze{
     pointer-events: none;
 }
+.done{
+    opacity: 0.7;
+    text-decoration: line-through;
+
+}
 .dark{
     background-color: black;
 }

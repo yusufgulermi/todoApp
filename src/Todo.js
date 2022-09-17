@@ -21,8 +21,11 @@ const Todo = ({ todo, id, handleDeleteEvent, handleEditEvent }) => {
       element.classList.add("edit")
 
   }
+  const myFunction =()=>{
+    document.getElementById(`${id}`).classList.toggle("done")
+}
   return (
-    <div className='solo-todos' id={id}>
+    <div className='solo-todos' id={id} onClick={myFunction}>
       <div className='solo-todo'>
         <p>{todo}</p>
         <div>

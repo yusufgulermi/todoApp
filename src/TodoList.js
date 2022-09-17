@@ -79,7 +79,7 @@ const TodoList = () => {
         fetchData();
 
     }, [])
-
+   
     return loading ?
         <div className='loading'>
             <h1>Loading Data...</h1>
@@ -100,7 +100,7 @@ const TodoList = () => {
                     <AddTodos handleClickEvent={handleClickEvent} />
                 </div>
 
-                <div className='list-todo'>
+                <div className='list-todo' >
                     {data.map(todo =>
                         <Todo key={todo.id} id={todo.id} todo={todo.todo} handleDeleteEvent={handleDeleteEvent} handleEditEvent={handleEditEvent} />)}
                 </div>
