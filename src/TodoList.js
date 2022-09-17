@@ -87,7 +87,7 @@ const TodoList = () => {
                     <h1>TODO List</h1>
                     <div>
                         <p>{username}</p>
-                        <Link to="/todoApp"><button>Logout</button></Link>
+                        <Link to="/"><button>Logout</button></Link>
                     </div>
 
                 </div>
