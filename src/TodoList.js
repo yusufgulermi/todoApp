@@ -14,13 +14,16 @@ const TodoList = () => {
 
     const handleDeleteEvent = async (id) => {
         setWarning("Wait Until This Procces Done!")
+        document.getElementById("root").classList.add("freeze")
         await axios.delete(`${process.env.REACT_APP_API_KEY}/users/${id}`)
         const newData = data.filter((data) => data.id !== id)
         setData(newData);
         setWarning("")
+        document.getElementById("root").classList.remove("freeze")
     }
     const handleClickEvent = async (addTodos) => {
         setWarning("Wait Until This Procces Done!")
+        document.getElementById("root").classList.add("freeze")
         await axios.post(`${process.env.REACT_APP_API_KEY}/users/`, {
             todo: addTodos
         })
@@ -41,11 +44,12 @@ const TodoList = () => {
             setData(newDatas)
         }
         setWarning("")
-        
+        document.getElementById("root").classList.remove("freeze")
     }
 
     const handleEditEvent = async(id, editText) => {
         setWarning("Wait Until This Procces Done!")
+        document.getElementById("root").classList.add("freeze")
         await axios.put(`https://631a122bdc236c0b1ed5e725.mockapi.io/users/${id}`, {
             todo: editText
         })
@@ -57,6 +61,7 @@ const TodoList = () => {
         })
         setData(localdata)
         setWarning("")
+        document.getElementById("root").classList.remove("freeze")
 
     }
 

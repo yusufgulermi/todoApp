@@ -17,7 +17,6 @@ const Login = () => {
         <div className='head'>
           <h1>Hello Stranger! Do You Want to Make Your Plan for Today?</h1>
           <h1>Type Your Name and Let's Start!</h1>
-          
         </div>
         <div className='log-info'>
           <input
